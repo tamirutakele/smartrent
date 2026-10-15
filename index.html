@@ -1,0 +1,349 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartRent | Find Your Dream Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #ffffff;
+        }
+
+        /* NAVBAR */
+        header {
+            width: 100%;
+            min-height: 75px;
+            padding: 15px 7%;
+            background: #101827;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #263449;
+            color: #38bdf8;
+        }
+
+        nav .register-btn {
+            background: #38bdf8;
+            color: #101827;
+            font-weight: bold;
+        }
+
+        nav .register-btn:hover {
+            background: #0ea5e9;
+            color: white;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                linear-gradient(rgba(5, 15, 30, 0.72),
+                                rgba(5, 15, 30, 0.78)),
+                url("assets/images/villa.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-content .welcome {
+            color: #38bdf8;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 5vw, 65px);
+            line-height: 1.2;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #e2e8f0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 28px;
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #38bdf8;
+            color: #101827;
+        }
+
+        .primary-btn:hover {
+            background: #0ea5e9;
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: white;
+            color: #101827;
+            transform: translateY(-3px);
+        }
+
+        /* ABOUT AND CONTACT */
+        .info-section {
+            padding: 75px 20px;
+            text-align: center;
+            color: #101827;
+        }
+
+        .info-section h2 {
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .info-section h2 span {
+            color: #0284c7;
+        }
+
+        .info-section p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 17px;
+            line-height: 1.9;
+            color: #475569;
+        }
+
+        #contact {
+            background: #e8f4fb;
+        }
+
+        .contact-email {
+            margin-top: 15px !important;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #101827;
+            text-align: center;
+            padding: 25px 15px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        footer span {
+            color: #38bdf8;
+        }
+
+        /* MOBILE */
+        @media (max-width: 850px) {
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            nav a {
+                padding: 9px;
+                font-size: 13px;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 24px;
+            }
+
+            nav {
+                gap: 4px;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .hero-content .welcome {
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .info-section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <a href="/SmartRent/index.html" class="logo">SmartRent</a>
+
+        <nav>
+            <a href="/SmartRent/index.html">Home</a>
+
+            <a href="/SmartRent/tenant/properties.php">Properties</a>
+
+            <a href="#about">About Us</a>
+
+            <a href="#contact">Contact Us</a>
+
+            <a href="/SmartRent/login.php">Login</a>
+
+            <a href="/SmartRent/register.php" class="register-btn">
+                Register
+            </a>
+        </nav>
+    </header>
+
+    <!-- HOME HERO -->
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+
+                <div class="welcome">WELCOME TO SMARTRENT</div>
+
+                <h1>
+                    Find Your <span>Smart & Luxury</span> Rental Home
+                </h1>
+
+                <p>
+                    Discover beautiful houses and apartments in Bahir Dar.
+                    Explore available properties and find a home that
+                    matches your lifestyle and budget.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="/SmartRent/tenant/properties.php"
+                       class="btn primary-btn">
+                        Explore Properties
+                    </a>
+
+                    <a href="/SmartRent/register.php"
+                       class="btn secondary-btn">
+                        Create Account
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ABOUT US -->
+        <section class="info-section" id="about">
+            <h2>About <span>SmartRent</span></h2>
+
+            <p>
+                SmartRent is a house rental and property management
+                website designed to help people discover rental houses
+                and apartments easily. Users can explore properties,
+                create an account, and manage their bookings.
+            </p>
+        </section>
+
+        <!-- CONTACT US -->
+        <section class="info-section" id="contact">
+            <h2>Contact <span>Us</span></h2>
+
+            <p>
+                Looking for a rental home? Explore our available
+                properties or create an account to get started.
+            </p>
+
+            <p class="contact-email">
+                Location: Bahir Dar, Ethiopia
+            </p>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            &copy; 2026 <span>SmartRent</span>.
+            All Rights Reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
+```

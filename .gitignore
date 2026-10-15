@@ -1,0 +1,20 @@
+# Database credentials
+.env
+.env.*
+!.env.example
+config/database.php
+
+# Dependencies
+vendor/
+node_modules/
+
+# Temporary files
+*.log
+*.tmp
+
+# Operating system files
+Thumbs.db
+.DS_Store
+
+# Editor settings
+.vscode/
